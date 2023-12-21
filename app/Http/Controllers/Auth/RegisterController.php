@@ -48,7 +48,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'role_id' => 1, //* by default user not admin (we can change it to be admin to can test the site then get back)
+            'role_id' => 2, //* by default user not admin (we can change it to be admin to can test the site then get back)
         ]);
 
         if (request()->hasFile('profile_pic'))
