@@ -84,7 +84,7 @@
 
                                 <div class="form-group">
                                     <label for="Title">Title</label>
-                                    <input type="text" class="form-control @error('title') is-invalid @enderror " id="Title" name="title">
+                                    <input type="text" class="form-control @error('title') is-invalid @enderror" id="Title" name="title" value="{{ old('title') }}">
                                     @error('title')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -94,7 +94,9 @@
 
                                 <div class="form-group">
                                     <label for="Body">Body</label>
-                                    <textarea type="text" class="form-control @error('body') is-invalid @enderror " id="Body" name="body"></textarea>
+                                    <textarea type="text" class="form-control @error('body') is-invalid @enderror" id="Body" name="body">
+                                        {{ old('body') }}
+                                    </textarea>
                                     @error('body')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

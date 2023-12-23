@@ -139,31 +139,51 @@
 
                                 <div class="form-group">
                                     <label for="Name">Name</label>
-                                    <input type="text" class="form-control" id="Name" name="name">
+                                    <input type="text" class="form-control @error ('name') is-invalid @enderror" id="Name" name="name" value="{{ old('name') }}">
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="E-mail">E-mail</label>
-                                    <input type="email" class="form-control" id="E-mail" name="email">
+                                    <input type="email" class="form-control @error ('email') is-invalid @enderror" id="E-mail" name="email" value="{{ old('email') }}">
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="Password">Password</label>
-                                    <input type="password" class="form-control" id="Password" name="password">
+                                    <input type="password" class="form-control @error ('password') is-invalid @enderror" id="Password" name="password" value="{{ old('password') }}">
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="Profile_Pic">Profile Picture</label>
-                                    <input type="file" accept="image/*" class="form-control" id="Profile_Pic" name="profile_pic">
+                                    <input type="file" accept="image/*" class="form-control" id="Profile_Pic" name="profile_pic" value="{{ old('profile_pic') }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="Role_id">Role</label>
-                                    <select name="role_id" id="Role_id" class="form-control">
+                                    <select name="role_id" id="Role_id" class="form-control @error ('role_id') is-invalid @enderror" value="{{ old('role_id') }}">
                                         <option disabled selected value>----- Choose role -----</option>
                                         <option value="1">Admin</option>
                                         <option value="2">User</option>
                                     </select>
+                                    @error('role_id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
 
                                 <div class="modal-footer">

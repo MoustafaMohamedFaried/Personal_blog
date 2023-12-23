@@ -18,4 +18,12 @@ class StorePostRequest extends FormRequest
             "body"=> "required",
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            "title.required"=> "You must add post's title",
+            "body.required"=> "You must add post's body",
+        ];
+    }
 }
